@@ -43,6 +43,11 @@
                 <slider-setting apply-on-change="true" value="RimScale" text="Rim Scale"
                                 min="-10" max="10" increment="0.05" show-buttons="true"
                                 hover-hint="Multiplicative value of rim lighting (DEFAULT: 2.00)"/>
+
+                <horizontal><text text="-----" font-size="4" color="#00000000"/></horizontal>
+
+                <dropdown-list-setting apply-on-change="true" value="NoteShape" text="Note Shape" choices="noteShapeChoices"
+                                       hover-hint="Change the shape of the notes"/>
             </scroll-view>
         </vertical>
     </tab>
@@ -348,6 +353,11 @@
                 <slider-setting apply-on-change="true" value="ArrowGlowScale" text="Arrow Glow Scale"
                                 min="0.01" max="2.0" increment="0.01" show-buttons="true" formatter="PercentageFormatter"
                                 hover-hint="Scale of glow on arrows"/>
+
+                <horizontal><text text="-----" font-size="4" color="#00000000"/></horizontal>
+
+                <dropdown-list-setting apply-on-change="true" value="ArrowShape" text="Arrow Shape" choices="arrowShapeChoices"
+                                       hover-hint="Change the shape of the arrows"/>
             </scroll-view>
         </vertical>
     </tab>
@@ -437,6 +447,19 @@
                 <slider-setting apply-on-change="true" value="FaceSymbolBloomAmount" text="Bloom Amount" formatter="PercentageFormatter"
                                 min="0.05" max="2" increment="0.05" show-buttons="true"
                                 hover-hint="Amount of bloom to apply to face symbols"/>
+            </scroll-view>
+        </vertical>
+    </tab>
+
+    <tab tags="tabs" tab-name="Profiles">
+        <vertical vertical-fit="PreferredSize" pref-height="70" pref-width="100" anchored-position-x="4">
+            <scroll-view spacing="0" pref-height="70" child-expand-width="true">
+                <dropdown-list-setting apply-on-change="true" value="ConfigurationProfile" text="Configuration Profile" choices="configurationProfileChoices"
+                                       hover-hint="Select a configuration profile"/>
+                <button-setting text="Save Profile" click-event="SaveProfile"
+                                hover-hint="Save the current configuration to the selected profile"/>
+                <button-setting text="Load Profile" click-event="LoadProfile"
+                                hover-hint="Load the selected configuration profile"/>
             </scroll-view>
         </vertical>
     </tab>

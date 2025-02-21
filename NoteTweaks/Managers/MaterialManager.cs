@@ -376,5 +376,25 @@ namespace NoteTweaks.Managers
                 AccDotDepthMaterial.renderQueue = 1996;
             }
         }
+
+        internal static void ApplyNoteShape(Mesh noteMesh)
+        {
+            if (NoteMaterial == null)
+            {
+                return;
+            }
+
+            NoteMaterial.SetMesh(noteMesh);
+        }
+
+        internal static void ApplyArrowShape(Mesh arrowMesh)
+        {
+            if (ArrowMaterial == null)
+            {
+                return;
+            }
+
+            ArrowMaterial.SetMesh(arrowMesh);
+        }
     }
 }

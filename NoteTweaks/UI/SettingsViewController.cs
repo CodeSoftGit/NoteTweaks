@@ -1124,5 +1124,35 @@ namespace NoteTweaks.UI
 
             return choices;
         }
+
+        protected string NoteShape
+        {
+            get => Config.NoteShape;
+            set
+            {
+                Config.NoteShape = value;
+                NotePreviewViewController.UpdateNoteShape();
+            }
+        }
+
+        protected string ArrowShape
+        {
+            get => Config.ArrowShape;
+            set
+            {
+                Config.ArrowShape = value;
+                NotePreviewViewController.UpdateArrowShape();
+            }
+        }
+
+        protected string ConfigurationProfile
+        {
+            get => Config.ConfigurationProfile;
+            set
+            {
+                Config.ConfigurationProfile = value;
+                NotePreviewViewController.UpdateConfigurationProfile();
+            }
+        }
     }
 }

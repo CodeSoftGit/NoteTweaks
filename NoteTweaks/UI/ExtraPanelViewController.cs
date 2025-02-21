@@ -237,5 +237,25 @@ namespace NoteTweaks.UI
                 return VersionManager.LatestVersion > VersionData.ModVersion;
             }
         }
+
+        [UIAction("save-profile")]
+        private void SaveProfile()
+        {
+            string profilePath = Path.Combine(UnityGame.UserDataPath, "NoteTweaks", "Profiles", Config.ConfigurationProfile + ".json");
+            string json = JsonConvert.SerializeObject(Config, Formatting.Indented);
+            File.WriteAllText(profilePath, json);
+        }
+
+        [UIAction("load-profile")]
+        private void LoadProfile()
+        {
+            string profilePath = Path.Combine(UnityGame.UserDataPath, "NoteTweaks", "Profiles", Config.ConfigurationProfile + ".json");
+            if (File.Exists(profilePath))
+            {
+                string json = File.ReadAllText(profilePath);
+                JsonConvert.PopulateObject(json, Config);
+                NotifyPropertyChanged(nameof(Config));
+            }
+        }
     }
 }

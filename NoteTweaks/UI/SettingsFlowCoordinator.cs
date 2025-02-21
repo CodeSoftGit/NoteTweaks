@@ -47,12 +47,16 @@ namespace NoteTweaks.UI
             NotePreviewViewController.NoteContainer.SetActive(true);
         }
 
-        // ReSharper disable once ParameterHidesMember
         protected override void BackButtonWasPressed(ViewController topViewController)
         {
             _mainFlowCoordinator.DismissFlowCoordinator(this);
             
             _ = NotePreviewViewController.CutoutFadeOut();
+        }
+
+        public void UpdateConfigurationProfile()
+        {
+            _settingsViewController.NotifyPropertyChanged(nameof(SettingsViewController.ConfigurationProfile));
         }
     }
 }
