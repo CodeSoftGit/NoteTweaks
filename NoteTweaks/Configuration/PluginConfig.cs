@@ -309,5 +309,14 @@ namespace NoteTweaks.Configuration
         
         public float OutlineBloomAmount { get; set; } = 0.1f;
         public float FaceSymbolBloomAmount { get; set; } = 0.1f;
+
+        // P7eca
+        public virtual string NoteShape { get; set; } = "Default";
+        
+        // P29e4
+        public virtual string ArrowShape { get; set; } = "Default";
+        
+        // P7adc
+        public virtual string ConfigurationProfile { get; set; } = "Default";
     }
 }
